@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { profile } from "@/content/profile";
 
 const NAV_LINKS = [
   { href: "/about", label: "About" },
@@ -17,7 +18,7 @@ export function Nav() {
           href="/"
           className="font-display text-lg font-semibold tracking-tight text-text"
         >
-          Tyler Chambers
+          {profile.name}
         </Link>
         <nav aria-label="Primary">
           <ul className="flex items-center gap-6 text-sm">
