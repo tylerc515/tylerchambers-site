@@ -1,8 +1,8 @@
 const SOCIAL_LINKS = [
-  { href: "https://linkedin.com/in/tylerchambers", label: "LinkedIn" },
-  { href: "https://github.com/tylerchambers", label: "GitHub" },
-  { href: "https://x.com/tylerchambers", label: "X" },
-  { href: "https://instagram.com/tylerchambers", label: "Instagram" },
+  { href: "https://www.linkedin.com/in/thetylerchambers/", label: "LinkedIn" },
+  { href: "https://github.com/tylerc515", label: "GitHub" },
+  { href: "https://x.com/thetylerc", label: "X" },
+  { href: "https://www.instagram.com/rarestmicrobe", label: "Instagram" },
 ];
 
 export function Footer() {
