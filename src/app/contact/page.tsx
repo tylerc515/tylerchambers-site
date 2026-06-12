@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { profile } from "@/content/profile";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with Tyler Chambers for consulting, employment opportunities, or general inquiries.",
+};
 
 export default function Contact() {
   return (

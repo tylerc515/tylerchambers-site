@@ -22,10 +22,32 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const SITE_URL = "https://tylerchambers.com";
+const SITE_DESCRIPTION =
+  "Tyler Chambers bridges 15+ years of industrial operations expertise with modern software, data analysis, and AI. DATO Manager at Boiler Services and Inspection. Founder of Neural Code Labs.";
+
 export const metadata: Metadata = {
-  title: "Tyler Chambers",
-  description:
-    "Bridging 15+ years of industrial operations expertise with modern software, AI, and business.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    template: "%s | Tyler Chambers",
+    default: "Tyler Chambers | Industrial Operations & Technology",
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: "Tyler Chambers",
+    title: "Tyler Chambers | Industrial Operations & Technology",
+    description: SITE_DESCRIPTION,
+    images: ["/og-default.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

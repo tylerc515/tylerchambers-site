@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { profile } from "@/content/profile";
 import { getAllPosts } from "@/lib/mdx";
 import { PostCard } from "@/components/post-card";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Insights on industrial operations, data analysis, software, and AI from Tyler Chambers.",
+};
 
 export default function Blog() {
   const posts = getAllPosts();

@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { profile } from "@/content/profile";
 import { TimelineCard } from "@/components/timeline-card";
+
+export const metadata: Metadata = {
+  title: "Experience",
+  description:
+    "15+ years of professional experience spanning industrial operations, enterprise software design, and business development.",
+};
 
 export default function Experience() {
   return (

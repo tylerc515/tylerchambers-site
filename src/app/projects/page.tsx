@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { profile } from "@/content/profile";
 import { ProjectCard } from "@/components/project-card";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Key projects including TRACE, an enterprise NDT data analysis platform, Neural Code Labs, and active client work.",
+};
 
 export default function Projects() {
   return (

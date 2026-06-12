@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { profile, skillCategories } from "@/content/profile";
 import { SkillSection } from "@/components/skill-section";
+
+export const metadata: Metadata = {
+  title: "Skills",
+  description:
+    "Technical and operational skills spanning NDT quality assurance, data analysis, Python, JavaScript, AI tooling, digital marketing, and more.",
+};
 
 export default function Skills() {
   return (

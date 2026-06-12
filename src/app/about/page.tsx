@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { profile } from "@/content/profile";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn about Tyler Chambers - from trade work and factory floors to a Computer Information Systems degree, building TRACE, and founding Neural Code Labs.",
+};
 
 export default function About() {
   return (
