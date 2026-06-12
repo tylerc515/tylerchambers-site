@@ -48,6 +48,17 @@ export interface SkillEntry {
   href?: string;
 }
 
+export type ProjectBadgeVariant = "enterprise" | "active" | "client";
+
+export interface ProjectEntry {
+  name: string;
+  description: string;
+  role: string;
+  href?: string;
+  badge: string;
+  badgeVariant: ProjectBadgeVariant;
+}
+
 export const profile = {
   name: "Tyler Chambers",
   tagline: "Where industrial expertise meets modern technology",
@@ -248,4 +259,32 @@ export const profile = {
       proficiency: "Proficient",
     },
   ] satisfies SkillEntry[],
+  projects: [
+    {
+      name: "TRACE Platform",
+      description:
+        "Trending, Reporting, Analysis & Condition Evaluation. Enterprise NDT data analysis platform built for the pulp and paper industry, currently in active use.",
+      role: "Designed the full system architecture, oversaw complete development and production deployment.",
+      badge: "Enterprise Software",
+      badgeVariant: "enterprise",
+    },
+    {
+      name: "Neural Code Labs",
+      description:
+        "AI automation, digital marketing, and consulting firm. Helps businesses streamline workflows and grow using tailored AI solutions.",
+      role: "Founder",
+      href: "https://www.neuralcodelabs.com",
+      badge: "Active Venture",
+      badgeVariant: "active",
+    },
+    {
+      name: "Trophy Big Buck Classic",
+      description:
+        "Digital marketing and ads management for KMK Productions' hunting board game.",
+      role: "Marketing Director / Web Developer — managing Google and Meta ad campaigns, heading up marketing strategy, and leading a full website rebuild.",
+      href: "https://www.huntingboardgames.net",
+      badge: "Active Client",
+      badgeVariant: "client",
+    },
+  ] satisfies ProjectEntry[],
 };
