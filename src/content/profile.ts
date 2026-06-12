@@ -30,6 +30,24 @@ export interface EducationEntry {
   note?: string;
 }
 
+export const skillCategories = [
+  "Industrial & Operations",
+  "Data & Productivity Tools",
+  "Software & Development",
+  "AI, Marketing & Business",
+] as const;
+
+export type SkillCategory = (typeof skillCategories)[number];
+
+export type ProficiencyTier = "Expert" | "Proficient" | "Familiar";
+
+export interface SkillEntry {
+  name: string;
+  category: SkillCategory;
+  proficiency: ProficiencyTier;
+  href?: string;
+}
+
 export const profile = {
   name: "Tyler Chambers",
   tagline: "Where industrial expertise meets modern technology",
@@ -122,4 +140,112 @@ export const profile = {
       note: "Started on a nursing track before making a deliberate pivot to Computer Information Systems.",
     },
   ] satisfies EducationEntry[],
+  skills: [
+    {
+      name: "NDT Data Quality & Analysis",
+      category: "Industrial & Operations",
+      proficiency: "Expert",
+    },
+    {
+      name: "TRACE Platform",
+      category: "Industrial & Operations",
+      proficiency: "Expert",
+      href: "https://bsitrace.com",
+    },
+    {
+      name: "Contractor Management & Scheduling",
+      category: "Industrial & Operations",
+      proficiency: "Expert",
+    },
+    {
+      name: "Inspection Scope Management",
+      category: "Industrial & Operations",
+      proficiency: "Expert",
+    },
+    {
+      name: "Pulp & Paper Industry Operations",
+      category: "Industrial & Operations",
+      proficiency: "Expert",
+    },
+    {
+      name: "Microsoft Excel",
+      category: "Data & Productivity Tools",
+      proficiency: "Expert",
+    },
+    {
+      name: "Microsoft Word",
+      category: "Data & Productivity Tools",
+      proficiency: "Expert",
+    },
+    {
+      name: "Microsoft Project",
+      category: "Data & Productivity Tools",
+      proficiency: "Expert",
+    },
+    {
+      name: "VBA & Excel Automation",
+      category: "Data & Productivity Tools",
+      proficiency: "Proficient",
+    },
+    {
+      name: "Python Scripting & Workflow Automation",
+      category: "Data & Productivity Tools",
+      proficiency: "Proficient",
+    },
+    {
+      name: "Web Development & Design",
+      category: "Software & Development",
+      proficiency: "Proficient",
+    },
+    {
+      name: "SQL",
+      category: "Software & Development",
+      proficiency: "Familiar",
+    },
+    {
+      name: "HTML & CSS",
+      category: "Software & Development",
+      proficiency: "Familiar",
+    },
+    {
+      name: "JavaScript / TypeScript",
+      category: "Software & Development",
+      proficiency: "Familiar",
+    },
+    {
+      name: "C#",
+      category: "Software & Development",
+      proficiency: "Familiar",
+    },
+    {
+      name: "AI Tooling & Workflow Automation",
+      category: "AI, Marketing & Business",
+      proficiency: "Expert",
+    },
+    {
+      name: "Prompt Engineering",
+      category: "AI, Marketing & Business",
+      proficiency: "Expert",
+    },
+    {
+      name: "Digital Marketing",
+      category: "AI, Marketing & Business",
+      proficiency: "Proficient",
+    },
+    {
+      name: "Google Ads / Meta Ads",
+      category: "AI, Marketing & Business",
+      proficiency: "Proficient",
+    },
+    {
+      name: "E-commerce & Dropshipping",
+      category: "AI, Marketing & Business",
+      proficiency: "Proficient",
+    },
+    {
+      name: "Business Operations & Consulting",
+      category: "AI, Marketing & Business",
+      proficiency: "Proficient",
+    },
+  ] satisfies SkillEntry[],
 };
