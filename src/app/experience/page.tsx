@@ -20,7 +20,7 @@ export default function Experience() {
         <a
           href={profile.resumeUrl}
           download
-          className="inline-flex items-center justify-center self-start rounded-md border border-border px-6 py-3 text-sm font-medium text-text transition-colors hover:border-accent hover:text-accent sm:mb-1"
+          className="btn-interactive inline-flex items-center justify-center self-start rounded-md border border-border px-6 py-3 text-sm font-medium text-text hover:border-accent hover:text-accent sm:mb-1"
         >
           Download Resume
         </a>

@@ -1,8 +1,18 @@
+import { GitHubIcon, InstagramIcon, LinkedInIcon, XIcon } from "@/components/icons";
+
 const SOCIAL_LINKS = [
-  { href: "https://www.linkedin.com/in/thetylerchambers/", label: "LinkedIn" },
-  { href: "https://github.com/tylerc515", label: "GitHub" },
-  { href: "https://x.com/thetylerc", label: "X" },
-  { href: "https://www.instagram.com/rarestmicrobe", label: "Instagram" },
+  {
+    href: "https://www.linkedin.com/in/thetylerchambers/",
+    label: "LinkedIn",
+    Icon: LinkedInIcon,
+  },
+  { href: "https://github.com/tylerc515", label: "GitHub", Icon: GitHubIcon },
+  { href: "https://x.com/thetylerc", label: "X", Icon: XIcon },
+  {
+    href: "https://www.instagram.com/rarestmicrobe",
+    label: "Instagram",
+    Icon: InstagramIcon,
+  },
 ];
 
 export function Footer() {
@@ -12,16 +22,17 @@ export function Footer() {
         <p className="font-mono">
           &copy; {new Date().getFullYear()} Tyler Chambers
         </p>
-        <ul className="flex items-center gap-6">
-          {SOCIAL_LINKS.map((link) => (
-            <li key={link.label}>
+        <ul className="flex items-center gap-5">
+          {SOCIAL_LINKS.map(({ href, label, Icon }) => (
+            <li key={label}>
               <a
-                href={link.href}
+                href={href}
                 target="_blank"
                 rel="noreferrer"
-                className="transition-colors hover:text-text"
+                aria-label={label}
+                className="text-muted transition-colors duration-150 hover:text-accent motion-reduce:transition-none"
               >
-                {link.label}
+                <Icon className="h-5 w-5" />
               </a>
             </li>
           ))}

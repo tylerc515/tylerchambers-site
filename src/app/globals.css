@@ -19,6 +19,7 @@
 @layer base {
   html {
     color-scheme: dark light;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -141,5 +142,54 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-hero-grid-drift {
     animation: none;
+  }
+}
+
+.btn-interactive {
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.btn-interactive:hover {
+  box-shadow: 0 0 16px -2px rgba(var(--color-accent-rgb), 0.5);
+}
+
+.btn-interactive:active {
+  transform: scale(0.98);
+}
+
+.card-interactive {
+  transition-property: transform, box-shadow, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--color-accent-rgb), 0.3);
+  box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn-interactive {
+    transition: none;
+  }
+
+  .btn-interactive:active {
+    transform: none;
+  }
+
+  .card-interactive {
+    transition: border-color 200ms ease-out;
+  }
+
+  .card-interactive:hover {
+    transform: none;
+    box-shadow: none;
   }
 }

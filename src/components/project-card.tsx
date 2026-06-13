@@ -20,13 +20,12 @@ export function ProjectCard({
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -4 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={
         featured
-          ? "flex flex-col gap-4 rounded-2xl border border-border bg-surface p-8 sm:p-10"
-          : "flex h-full flex-col gap-4 rounded-2xl border border-border bg-surface p-6"
+          ? "card-interactive flex flex-col gap-4 rounded-2xl border border-border bg-surface p-8 sm:p-10"
+          : "card-interactive flex h-full flex-col gap-4 rounded-2xl border border-border bg-surface p-6"
       }
     >
       <span

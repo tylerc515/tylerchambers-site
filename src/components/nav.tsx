@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { profile } from "@/content/profile";
+import { NavLink } from "@/components/nav-link";
 
 const NAV_LINKS = [
   { href: "/about", label: "About" },
@@ -24,12 +25,7 @@ export function Nav() {
           <ul className="flex items-center gap-6 text-sm">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-muted transition-colors hover:text-text"
-                >
-                  {link.label}
-                </Link>
+                <NavLink href={link.href} label={link.label} />
               </li>
             ))}
           </ul>

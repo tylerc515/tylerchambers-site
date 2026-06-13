@@ -11,9 +11,9 @@ const PROFICIENCY_STYLES: Record<ProficiencyTier, string> = {
 
 const CARD_STYLES: Record<ProficiencyTier, string> = {
   Expert:
-    "border-border bg-surface p-5 transition-all duration-300 hover:border-accent/50 hover:ring-4 hover:ring-accent/10",
-  Proficient: "border-border bg-surface p-4",
-  Familiar: "border-border bg-surface p-4",
+    "card-interactive border-border bg-surface p-5 hover:border-accent/50 hover:ring-4 hover:ring-accent/10",
+  Proficient: "card-interactive border-border bg-surface p-4",
+  Familiar: "card-interactive border-border bg-surface p-4",
 };
 
 const NAME_STYLES: Record<ProficiencyTier, string> = {

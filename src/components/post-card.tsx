@@ -15,7 +15,7 @@ export function PostCard({ post }: { post: PostMeta }) {
     >
       <Link
         href={`/blog/${post.slug}`}
-        className="flex h-full flex-col gap-3 rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent"
+        className="card-interactive flex h-full flex-col gap-3 rounded-2xl border border-border bg-surface p-6"
       >
         <div className="flex items-center gap-3 text-xs text-muted">
           <time dateTime={post.date} className="font-mono">

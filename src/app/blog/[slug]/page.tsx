@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { formatDate } from "@/lib/date";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
+import { ScrollProgress } from "@/components/scroll-progress";
 
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -41,6 +42,7 @@ export default async function BlogPost({
 
   return (
     <article className="container max-w-prose py-section">
+      <ScrollProgress />
       <Link
         href="/blog"
         className="text-sm text-muted transition-colors hover:text-text"

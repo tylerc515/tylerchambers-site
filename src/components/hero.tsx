@@ -42,13 +42,13 @@ export function Hero() {
           <motion.div variants={item} className="flex flex-wrap gap-4 pt-2">
             <Link
               href="/experience"
-              className="rounded-md bg-text px-6 py-3 text-sm font-medium text-bg transition-opacity hover:opacity-90"
+              className="btn-interactive rounded-md bg-text px-6 py-3 text-sm font-medium text-bg hover:opacity-90"
             >
               View My Work
             </Link>
             <Link
               href="/contact"
-              className="rounded-md border border-border px-6 py-3 text-sm font-medium text-text transition-colors hover:border-accent hover:text-accent"
+              className="btn-interactive rounded-md border border-border px-6 py-3 text-sm font-medium text-text hover:border-accent hover:text-accent"
             >
               Get In Touch
             </Link>
