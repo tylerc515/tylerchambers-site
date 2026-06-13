@@ -28,7 +28,7 @@ export default function About() {
             <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
               {profile.name}
             </h1>
-            <p className="mt-2 text-lg text-muted">{profile.tagline}</p>
+            <p className="mt-2 text-lg text-muted">The story so far</p>
           </div>
 
           <p>
@@ -73,7 +73,9 @@ export default function About() {
           need both technical depth and commercial clarity.
         </p>
         <a
-          href="#"
+          href="https://www.neuralcodelabs.com"
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-4 inline-block text-sm font-medium text-accent transition-opacity hover:opacity-80"
         >
           Visit Neural Code Labs &rarr;

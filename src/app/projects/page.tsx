@@ -15,7 +15,9 @@ export default function Projects() {
         <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
           Projects
         </h1>
-        <p className="mt-2 max-w-xl text-muted">{profile.tagline}</p>
+        <p className="mt-2 max-w-xl text-muted">
+          What I&rsquo;ve built and who I&rsquo;m building for
+        </p>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
