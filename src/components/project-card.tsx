@@ -9,7 +9,13 @@ const BADGE_STYLES: Record<ProjectBadgeVariant, string> = {
   client: "border-accent/20 bg-transparent text-accent/70",
 };
 
-export function ProjectCard({ project }: { project: ProjectEntry }) {
+export function ProjectCard({
+  project,
+  featured = false,
+}: {
+  project: ProjectEntry;
+  featured?: boolean;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -17,22 +23,34 @@ export function ProjectCard({ project }: { project: ProjectEntry }) {
       whileHover={{ y: -4 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="flex h-full flex-col gap-4 rounded-2xl border border-border bg-surface p-6"
+      className={
+        featured
+          ? "flex flex-col gap-4 rounded-2xl border border-border bg-surface p-8 sm:p-10"
+          : "flex h-full flex-col gap-4 rounded-2xl border border-border bg-surface p-6"
+      }
     >
       <span
         className={`inline-flex w-fit rounded-full border px-2.5 py-1 text-xs font-medium ${BADGE_STYLES[project.badgeVariant]}`}
       >
         {project.badge}
       </span>
-      <h3 className="font-display text-xl font-semibold tracking-tight">
+      <h3
+        className={
+          featured
+            ? "font-display text-3xl font-semibold tracking-tight sm:text-4xl"
+            : "font-display text-xl font-semibold tracking-tight"
+        }
+      >
         {project.name}
       </h3>
-      <p className="text-sm text-muted">{project.description}</p>
+      <p className={featured ? "max-w-2xl text-base text-muted" : "text-sm text-muted"}>
+        {project.description}
+      </p>
       <p className="text-sm text-text">
         <span className="font-medium">Role: </span>
         {project.role}
       </p>
-      <div className="mt-auto pt-2">
+      <div className={featured ? "pt-2" : "mt-auto pt-2"}>
         {project.href ? (
           <a
             href={project.href}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { profile } from "@/content/profile";
+import { PageHeader } from "@/components/page-header";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -12,9 +13,10 @@ export default function Contact() {
   return (
     <div className="container flex flex-col gap-section py-section">
       <section className="flex flex-col gap-3">
-        <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-          Get in Touch
-        </h1>
+        <PageHeader
+          title="Get in Touch"
+          subtitle="Questions, projects, or just to say hello"
+        />
         <p className="max-w-2xl text-muted">
           Have a project, an idea, or a question about TRACE or Neural Code
           Labs? Send a message below, or reach me directly at{" "}

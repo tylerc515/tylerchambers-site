@@ -9,6 +9,19 @@ const PROFICIENCY_STYLES: Record<ProficiencyTier, string> = {
   Familiar: "border-border bg-surface text-muted",
 };
 
+const CARD_STYLES: Record<ProficiencyTier, string> = {
+  Expert:
+    "border-border bg-surface p-5 transition-all duration-300 hover:border-accent/50 hover:ring-4 hover:ring-accent/10",
+  Proficient: "border-border bg-surface p-4",
+  Familiar: "border-border bg-surface p-4",
+};
+
+const NAME_STYLES: Record<ProficiencyTier, string> = {
+  Expert: "text-base font-semibold text-text",
+  Proficient: "text-sm font-medium text-text",
+  Familiar: "text-sm font-medium text-text",
+};
+
 export function SkillSection({
   title,
   skills,
@@ -30,9 +43,9 @@ export function SkillSection({
         {skills.map((skill) => (
           <div
             key={skill.name}
-            className="flex items-center justify-between gap-3 rounded-lg border border-border bg-surface p-4"
+            className={`flex items-center justify-between gap-3 rounded-lg border ${CARD_STYLES[skill.proficiency]}`}
           >
-            <span className="text-sm font-medium text-text">
+            <span className={NAME_STYLES[skill.proficiency]}>
               {skill.href ? (
                 <a
                   href={skill.href}

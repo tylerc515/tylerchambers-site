@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { profile } from "@/content/profile";
 import { TimelineCard } from "@/components/timeline-card";
+import { PageHeader } from "@/components/page-header";
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -12,16 +13,14 @@ export default function Experience() {
   return (
     <div className="container flex flex-col gap-section py-section">
       <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-            Experience
-          </h1>
-          <p className="mt-2 max-w-xl text-muted">{profile.tagline}</p>
-        </div>
+        <PageHeader
+          title="Experience"
+          subtitle="Fifteen years, one continuous thread"
+        />
         <a
           href={profile.resumeUrl}
           download
-          className="inline-flex items-center justify-center self-start rounded-md border border-border px-6 py-3 text-sm font-medium text-text transition-colors hover:border-accent hover:text-accent"
+          className="inline-flex items-center justify-center self-start rounded-md border border-border px-6 py-3 text-sm font-medium text-text transition-colors hover:border-accent hover:text-accent sm:mb-1"
         >
           Download Resume
         </a>
@@ -31,7 +30,7 @@ export default function Experience() {
         <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
           Work Experience
         </h2>
-        <div className="relative mt-8 flex flex-col gap-12 border-l border-border pl-10">
+        <div className="relative mt-8 flex flex-col gap-12 border-l-2 border-border pl-10 lg:ml-24 lg:pl-12">
           {profile.workExperience.map((entry) => (
             <TimelineCard key={entry.company} entry={entry} />
           ))}

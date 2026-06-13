@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { profile } from "@/content/profile";
 import { ProjectCard } from "@/components/project-card";
+import { PageHeader } from "@/components/page-header";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -9,21 +10,22 @@ export const metadata: Metadata = {
 };
 
 export default function Projects() {
+  const [featuredProject, ...otherProjects] = profile.projects;
+
   return (
     <div className="container flex flex-col gap-section py-section">
-      <div>
-        <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-          Projects
-        </h1>
-        <p className="mt-2 max-w-xl text-muted">
-          What I&rsquo;ve built and who I&rsquo;m building for
-        </p>
-      </div>
+      <PageHeader
+        title="Projects"
+        subtitle="What I've built and who I'm building for"
+      />
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {profile.projects.map((project) => (
-          <ProjectCard key={project.name} project={project} />
-        ))}
+      <div className="flex flex-col gap-6">
+        <ProjectCard project={featuredProject} featured />
+        <div className="grid gap-6 sm:grid-cols-2">
+          {otherProjects.map((project) => (
+            <ProjectCard key={project.name} project={project} />
+          ))}
+        </div>
       </div>
     </div>
   );
