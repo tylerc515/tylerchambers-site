@@ -119,3 +119,27 @@
   background-color: transparent;
   padding: 0;
 }
+
+.hero-grid {
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px),
+    radial-gradient(var(--color-text) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 80px 80px;
+}
+
+@keyframes hero-grid-drift {
+  to {
+    background-position: 80px 80px, 80px 80px, 80px 80px;
+  }
+}
+
+.animate-hero-grid-drift {
+  animation: hero-grid-drift 120s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-grid-drift {
+    animation: none;
+  }
+}

@@ -24,7 +24,7 @@ export function StatCounter({ value, suffix = "", label }: Stat) {
 
   return (
     <div className="flex flex-col gap-1">
-      <p ref={ref} className="font-mono text-4xl font-semibold text-text sm:text-5xl">
+      <p ref={ref} className="font-mono text-4xl font-semibold text-accent sm:text-5xl">
         {typeof value === "number" ? `${displayValue}${suffix}` : value}
       </p>
       <p className="text-sm text-muted">{label}</p>
