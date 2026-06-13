@@ -62,7 +62,7 @@ export interface ProjectEntry {
 export const profile = {
   name: "Tyler Chambers",
   tagline: "Where industrial expertise meets modern technology",
-  contactEmail: "tylerc515@gmail.com",
+  contactEmail: "tyler@tylerchambers.com",
   stats: [
     { value: 15, suffix: "+", label: "Years Experience" },
     { value: 10, suffix: "+", label: "Years in Data & Software" },
