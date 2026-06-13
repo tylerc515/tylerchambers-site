@@ -46,6 +46,14 @@
   pre {
     font-family: var(--font-mono), monospace;
   }
+
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+  }
 }
 
 .container {
@@ -171,9 +179,87 @@
   box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.45);
 }
 
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  transition-property: border-color, color, background-color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.theme-toggle:hover {
+  border-color: rgba(var(--color-accent-rgb), 0.4);
+  color: var(--color-accent);
+}
+
+.theme-toggle-icon {
+  position: absolute;
+  height: 1.1rem;
+  width: 1.1rem;
+  transition-property: opacity, transform;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+.theme-toggle-sun {
+  opacity: 0;
+  transform: scale(0.5) rotate(-90deg);
+}
+
+.theme-toggle-moon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+@media (prefers-color-scheme: light) {
+  .theme-toggle-sun {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  .theme-toggle-moon {
+    opacity: 0;
+    transform: scale(0.5) rotate(90deg);
+  }
+}
+
+html[data-theme="dark"] .theme-toggle-sun {
+  opacity: 0;
+  transform: scale(0.5) rotate(-90deg);
+}
+
+html[data-theme="dark"] .theme-toggle-moon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+html[data-theme="light"] .theme-toggle-sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+html[data-theme="light"] .theme-toggle-moon {
+  opacity: 0;
+  transform: scale(0.5) rotate(90deg);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none;
   }
 
   .btn-interactive {
@@ -191,5 +277,9 @@
   .card-interactive:hover {
     transform: none;
     box-shadow: none;
+  }
+
+  .theme-toggle-icon {
+    transition: none;
   }
 }

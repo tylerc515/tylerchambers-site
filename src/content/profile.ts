@@ -11,6 +11,13 @@ export interface FocusArea {
   linkLabel?: string;
 }
 
+export interface TestimonialEntry {
+  quote: string;
+  name: string;
+  title: string;
+  company: string;
+}
+
 export interface ExperienceHighlight {
   title?: string;
   description: string;
@@ -54,6 +61,7 @@ export interface ProjectEntry {
   name: string;
   description: string;
   role: string;
+  result: string;
   href?: string;
   badge: string;
   badgeVariant: ProjectBadgeVariant;
@@ -266,6 +274,8 @@ export const profile = {
       description:
         "Trending, Reporting, Analysis & Condition Evaluation. Enterprise NDT data analysis platform built for the pulp and paper industry, currently in active use.",
       role: "Designed the full system architecture, oversaw complete development and production deployment.",
+      result:
+        "In active production use across multiple mill outages in the pulp and paper industry.",
       href: "https://bsitrace.com",
       badge: "Enterprise Software",
       badgeVariant: "enterprise",
@@ -275,6 +285,7 @@ export const profile = {
       description:
         "AI automation, digital marketing, and consulting firm. Helps businesses cut out repetitive work and grow using tailored AI solutions.",
       role: "Founder",
+      result: "Serving active clients with AI automation and digital marketing.",
       href: "https://www.neuralcodelabs.com",
       badge: "Active Venture",
       badgeVariant: "active",
@@ -284,9 +295,25 @@ export const profile = {
       description:
         "Digital marketing and ads management for KMK Productions' hunting board game.",
       role: "Marketing Director and Web Developer. Manages Google and Meta ad campaigns and leads marketing strategy. Also led a full website rebuild.",
+      result:
+        "Managing live Google and Meta ad campaigns with a full site rebuild in progress.",
       href: "https://www.huntingboardgames.net",
       badge: "Active Client",
       badgeVariant: "client",
     },
   ] satisfies ProjectEntry[],
+  testimonials: [
+    {
+      quote: "Placeholder testimonial text here.",
+      name: "Name",
+      title: "Title",
+      company: "Company",
+    },
+    {
+      quote: "Placeholder testimonial text here.",
+      name: "Name",
+      title: "Title",
+      company: "Company",
+    },
+  ] satisfies TestimonialEntry[],
 };

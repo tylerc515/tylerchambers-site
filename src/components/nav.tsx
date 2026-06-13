@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { profile } from "@/content/profile";
 import { NavLink } from "@/components/nav-link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const NAV_LINKS = [
   { href: "/about", label: "About" },
@@ -21,15 +22,18 @@ export function Nav() {
         >
           {profile.name}
         </Link>
-        <nav aria-label="Primary">
-          <ul className="flex items-center gap-6 text-sm">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <NavLink href={link.href} label={link.label} />
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="flex items-center gap-6">
+          <nav aria-label="Primary">
+            <ul className="flex items-center gap-6 text-sm">
+              {NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <NavLink href={link.href} label={link.label} />
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );

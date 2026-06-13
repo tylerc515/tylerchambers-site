@@ -49,6 +49,7 @@ export function ProjectCard({
         <span className="font-medium">Role: </span>
         {project.role}
       </p>
+      <p className="text-xs text-muted">{project.result}</p>
       <div className={featured ? "pt-2" : "mt-auto pt-2"}>
         {project.href ? (
           <a

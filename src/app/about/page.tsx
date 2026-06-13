@@ -8,6 +8,24 @@ export const metadata: Metadata = {
     "Learn about Tyler Chambers - from trade work and factory floors to a Computer Information Systems degree, building TRACE, and founding Neural Code Labs.",
 };
 
+const PRINCIPLES = [
+  {
+    title: "Start with the real workflow",
+    description:
+      "I build from actual field scenarios, not abstract feature lists. The requirements come from how the work actually gets done.",
+  },
+  {
+    title: "Support decisions, don't replace them",
+    description:
+      "Good software helps people make better calls. It doesn't pretend the math is perfect just because it produces a number.",
+  },
+  {
+    title: "The output has to make sense",
+    description:
+      "If the client can't read the report or the end user can't follow the workflow, the backend doesn't matter.",
+  },
+];
+
 export default function About() {
   return (
     <div className="container flex flex-col gap-section py-section">
@@ -61,6 +79,27 @@ export default function About() {
             that same combination, industrial floor experience and modern
             software, gets put to work for other businesses.
           </p>
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-6">
+        <h2 className="font-display text-2xl font-semibold tracking-tight">
+          How I Work
+        </h2>
+        <div className="grid gap-6 md:grid-cols-3">
+          {PRINCIPLES.map((principle) => (
+            <div
+              key={principle.title}
+              className="rounded-2xl border border-border border-l-2 border-l-accent bg-surface p-6"
+            >
+              <h3 className="font-display text-lg font-semibold tracking-tight">
+                {principle.title}
+              </h3>
+              <p className="mt-2 text-sm text-muted">
+                {principle.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
