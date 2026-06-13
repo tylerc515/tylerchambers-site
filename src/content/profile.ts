@@ -266,6 +266,7 @@ export const profile = {
       description:
         "Trending, Reporting, Analysis & Condition Evaluation. Enterprise NDT data analysis platform built for the pulp and paper industry, currently in active use.",
       role: "Designed the full system architecture, oversaw complete development and production deployment.",
+      href: "https://bsitrace.com",
       badge: "Enterprise Software",
       badgeVariant: "enterprise",
     },
