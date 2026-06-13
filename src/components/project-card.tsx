@@ -60,7 +60,7 @@ export function ProjectCard({
             Visit Project &rarr;
           </a>
         ) : (
-          <p className="text-sm text-muted">Proprietary — no public link</p>
+          <p className="text-sm text-muted">Proprietary, no public link</p>
         )}
       </div>
     </motion.div>

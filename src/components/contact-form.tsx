@@ -120,7 +120,7 @@ export function ContactForm() {
 
       {submitState === "success" && (
         <p className="text-sm text-emerald-400" role="status">
-          Thanks — your message has been sent. I&rsquo;ll get back to you
+          Thanks, your message has been sent. I&rsquo;ll get back to you
           soon.
         </p>
       )}

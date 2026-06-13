@@ -73,7 +73,7 @@ export const profile = {
     {
       title: "Industrial Operations",
       description:
-        "15+ years in NDT quality assurance and quality control across pulp & paper and heavy industry — reading systems, data, and risk the way the floor actually runs.",
+        "15+ years in NDT quality assurance and quality control across pulp & paper and heavy industry, reading systems, data, and risk the way the floor actually runs.",
     },
     {
       title: "Data & Software",
@@ -93,7 +93,7 @@ export const profile = {
     {
       company: "Boiler Services and Inspection LLC",
       role: "DATO Manager / IT Manager / TRACE Architect",
-      period: "2013 – Present",
+      period: "2013-Present",
       highlights: [
         {
           title: "DATO",
@@ -103,7 +103,7 @@ export const profile = {
         {
           title: "TRACE Platform",
           description:
-            "Designed the full architecture of an enterprise NDT data analysis and reporting platform, oversaw its complete development and production deployment — now in active use across the pulp and paper industry.",
+            "Designed the full architecture of an enterprise NDT data analysis and reporting platform and oversaw its complete development and production deployment. It's now in active use across the pulp and paper industry.",
         },
         {
           title: "IT Operations",
@@ -114,7 +114,7 @@ export const profile = {
     {
       company: "Monticello Aluminum Company",
       role: "Installation Technician",
-      period: "2008 – 2012",
+      period: "2008-2012",
       highlights: [
         {
           description:
@@ -125,7 +125,7 @@ export const profile = {
     {
       company: "Hood Packaging",
       role: "Shafter/Tuber Operator",
-      period: "2006 – 2008",
+      period: "2006-2008",
       highlights: [
         {
           description:
@@ -136,7 +136,7 @@ export const profile = {
     {
       company: "Monticello Exxon",
       role: "Light Mechanic",
-      period: "2004 – 2006",
+      period: "2004-2006",
       highlights: [
         {
           description: "Oil changes, tire rotation, and general mechanical work.",
@@ -272,7 +272,7 @@ export const profile = {
     {
       name: "Neural Code Labs",
       description:
-        "AI automation, digital marketing, and consulting firm. Helps businesses streamline workflows and grow using tailored AI solutions.",
+        "AI automation, digital marketing, and consulting firm. Helps businesses cut out repetitive work and grow using tailored AI solutions.",
       role: "Founder",
       href: "https://www.neuralcodelabs.com",
       badge: "Active Venture",
@@ -282,7 +282,7 @@ export const profile = {
       name: "Trophy Big Buck Classic",
       description:
         "Digital marketing and ads management for KMK Productions' hunting board game.",
-      role: "Marketing Director / Web Developer — managing Google and Meta ad campaigns, heading up marketing strategy, and leading a full website rebuild.",
+      role: "Marketing Director and Web Developer. Manages Google and Meta ad campaigns and leads marketing strategy. Also led a full website rebuild.",
       href: "https://www.huntingboardgames.net",
       badge: "Active Client",
       badgeVariant: "client",

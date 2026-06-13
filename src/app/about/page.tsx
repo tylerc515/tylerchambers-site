@@ -32,7 +32,7 @@ export default function About() {
           </div>
 
           <p>
-            I didn&rsquo;t start in software. My first jobs were hands-on —
+            I didn&rsquo;t start in software. My first jobs were hands-on,
             turning wrenches as a mechanic and running the floor as an
             operator. That work taught me how systems actually fail, and how
             the people running them think under pressure. It&rsquo;s a
@@ -41,15 +41,15 @@ export default function About() {
 
           <p>
             At some point I decided I wanted more leverage, so I made a
-            deliberate pivot: went back to school for a Computer Information
-            Systems degree at the University of Arkansas at Monticello,
-            graduating in 2014.
+            deliberate pivot. I went back to school for a Computer
+            Information Systems degree at the University of Arkansas at
+            Monticello, graduating in 2014.
           </p>
 
           <p>
             From there I joined BSI, where I grew from individual contributor
             into the person designing and overseeing the full development of{" "}
-            <strong className="text-text">TRACE</strong> — an enterprise NDT
+            <strong className="text-text">TRACE</strong>, an enterprise NDT
             data analysis platform now running in production across the pulp
             and paper industry. I also handle all of BSI&rsquo;s IT
             operations, because someone has to and I&rsquo;m good at it.
@@ -58,8 +58,8 @@ export default function About() {
           <p>
             Now I&rsquo;m building{" "}
             <strong className="text-text">Neural Code Labs</strong>, where
-            that same combination — industrial floor experience and modern
-            software — gets put to work for other businesses.
+            that same combination, industrial floor experience and modern
+            software, gets put to work for other businesses.
           </p>
         </div>
       </section>
