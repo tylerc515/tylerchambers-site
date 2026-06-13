@@ -6,59 +6,131 @@ tags: ["software", "NDT", "industrial", "lessons learned"]
 author: "Tyler Chambers"
 ---
 
-At [Boiler Services and Inspection](https://www.boilerservicesandinspection.com), 
-we work in a niche corner of the industrial world - nondestructive testing and 
-data analysis for boilers, primarily in the pulp and paper industry. A few years 
-ago we decided to stop relying on tools that weren't built for how we actually 
-work and build our own. That became TRACE - Trending, Reporting, Analysis, and 
-Condition Evaluation.
+At [Boiler Services and Inspection](https://www.boilerservicesandinspection.com/), 
+we provide boiler inspection, quality assurance, and construction surveillance 
+services to the pulp, paper, and power industries. BSI has been doing this work 
+since 1991. My role specifically sits in DATO - Data Analysis, Trending, and 
+Optimization - where we manage NDT contractors, ensure inspection scope is 
+complete, and analyze the data they collect to support boiler reliability 
+decisions. Last year, with direction from BSI leadership and a great team around 
+me, we decided to stop relying on tools that weren't built for how we actually 
+work and build our own. That became [TRACE](https://bsitrace.com) - Trending, 
+Reporting, Analysis, and Condition Evaluation.
 
-I led the project from concept through deployment. I am not a full-time software developer. Here's what I learned.
+I led the project from concept through deployment. I am not a full-time software 
+developer. Here's what I learned.
 
 ## Tribal Knowledge Is the Real Problem
 
-The hardest part early on wasn't the technology. It was figuring out how much of what we do in DATO is just tribal knowledge. We know how a boiler wall is laid out, how tubes are counted, how test bands work, why L/C/R readings matter, why verification readings are different from original readings. That stuff feels obvious when you've been around it for years.
+The hardest part early on wasn't the technology. It was figuring out how much of 
+what we do in DATO is just tribal knowledge. Our team knows how a boiler wall is 
+laid out, how tubes are counted, how test bands work, why L/C/R readings matter, 
+why verification readings are different from original readings. That stuff feels 
+obvious when you've been around it for years.
 
 It is not obvious to a developer.
 
-TRACE forced me to separate two things I'd never really thought to separate before: what the software should do automatically versus what the analyst should still decide. What gets calculated? What triggers a warning? What do you leave to human judgment? Those sound like simple questions. Answering them precisely, for every scenario and edge case, is where most of the real work happened.
+TRACE forced me to separate two things I'd never really thought to separate 
+before: what the software should do automatically versus what the analyst should 
+still decide. What gets calculated? What triggers a warning? What do you leave to 
+human judgment? Those sound like simple questions. Answering them precisely, for 
+every scenario and edge case, is where most of the real work happened. My 
+colleagues were critical here - they caught gaps in my thinking, pushed back when 
+something didn't match real field conditions, and kept the requirements grounded 
+in how the work actually gets done.
 
 ## The Report Matters More Than You Think
 
-Early on I focused heavily on the analysis side. Current data, wear rates, forecasts, verification lists, color maps. That's the core of what TRACE does so that's where my head was.
+Early on I focused heavily on the analysis side. Current data, wear rates, 
+forecasts, verification lists, color maps. That's the core of what TRACE does so 
+that's where my head was.
 
-But the report is what the client actually sees. It has to be clean, consistent, and something you can defend. If the software is doing everything right on the backend but the report is confusing or sloppy, the client doesn't care. That became a bigger part of the project than I expected. Taking complex inspection data and making it readable without losing accuracy is harder than it sounds.
+But the report is what the client actually sees. It has to be clean, consistent, 
+and something you can defend. If the software is doing everything right on the 
+backend but the report is confusing or sloppy, the client doesn't care. That 
+became a bigger part of the project than I expected. Taking complex inspection 
+data and making it readable without losing accuracy is harder than it sounds. BSI 
+leadership helped shape a lot of that thinking - their standards for what a 
+client-ready report looks like pushed us to get that side of things right.
 
 ## Simple Features Aren't Simple
 
 Every feature that sounds straightforward has a lot underneath it.
 
-Current data sounds simple until you start asking how it handles L/C/R readings, minimums, test point filters, missing readings, comment codes, section filters, tube count direction, and report orientation. Wear rate sounds simple until you get into least squares, under-sampled areas, growth tolerance, and which years to include or exclude. Forecast sounds simple until you realize it's only as good as the historical data behind it.
+Current data sounds simple until you start asking how it handles L/C/R readings, 
+minimums, test point filters, missing readings, comment codes, section filters, 
+tube count direction, and report orientation. Wear rate sounds simple until you 
+get into least squares, under-sampled areas, growth tolerance, and which years to 
+include or exclude. Forecast sounds simple until you realize it's only as good as 
+the historical data behind it.
 
-That last one I cared a lot about. Boiler reliability decisions get made based on these forecasts. Equipment failures at a mill are not small events. TRACE can calculate trends and produce numbers that look precise, but bad historical data doesn't get better just because the math ran cleanly. The software needed to help analysts make better decisions without pretending it's more certain than it is.
+That last one I cared a lot about. Boiler reliability decisions get made based on 
+these forecasts. Equipment failures at a mill are not small events. TRACE can 
+calculate trends and produce numbers that look precise, but bad historical data 
+doesn't get better just because the math ran cleanly. The software needed to help 
+analysts make better decisions without pretending it's more certain than it is. 
+That was a conversation the whole team had, and getting alignment on it early made 
+the rest of the build easier.
 
 ## What I'd Do Differently
 
-More time upfront on real scenarios before development started. Not feature lists. Actual field situations written out. Something like: we're onsite, the contractor sends an Excel file, these readings are missing, this tube count is reversed, this section has coating, the client needs a verification list before night shift. What happens?
+More time upfront on real scenarios before development started. Not feature lists. 
+Actual field situations written out. Something like: we're onsite, the contractor 
+sends an Excel file, these readings are missing, this tube count is reversed, this 
+section has coating, the client needs a verification list before night shift. What 
+happens?
 
-Those scenarios are where requirements stop being vague. Abstract feature descriptions leave too much room for interpretation. Specific situations force you to get precise.
+Those scenarios are where requirements stop being vague. Abstract feature 
+descriptions leave too much room for interpretation. Specific situations force you 
+to get precise. The team at [Sketch Development Services](https://www.sketchdev.io/) 
+was great to work with, but the more clearly we could hand them a real scenario 
+instead of a vague feature description, the faster and cleaner the output came 
+back.
 
-I'd also separate must-have features from nice-to-have features harder from the start. When you're building something you care about, everything feels critical. From a development standpoint it isn't. Some things determine whether the software can work in the field at all. Others are improvements you can add later. I got better at making that call as the project went on. I'd just start there next time.
+I'd also separate must-have features from nice-to-have features harder from the 
+start. When you're building something you care about, everything feels critical. 
+From a development standpoint it isn't. Some things determine whether the software 
+can work in the field at all. Others are improvements you can add later. I got 
+better at making that call as the project went on. I'd just start there next time.
 
 ## Software Is Slower Than Your Imagination
 
-"Just add a filter" sounds like an afternoon. It might actually touch the database, the UI, the export logic, the saved settings, and the report engine. I came out of this with a lot more respect for how much work is behind things that look simple on screen.
+"Just add a filter" sounds like an afternoon. It might actually touch the 
+database, the UI, the export logic, the saved settings, and the report engine. I 
+came out of this with a lot more respect for how much work is behind things that 
+look simple on screen.
 
-At the same time I learned that developers in a niche industry need very precise direction. They can build almost anything. They cannot guess what inspection logic is supposed to do. That part has to come from you.
+The team at Sketch were patient with that learning curve. They pushed back when 
+something I asked for was more complex than I realized, explained why, and helped 
+us prioritize. That back-and-forth was genuinely useful. A developer who just says 
+yes to everything isn't doing you any favors in a project like this.
 
 ## Why It Was Worth It
 
-TRACE was built from real field experience. Not from someone guessing how boiler inspection data should work. From years of sitting onsite during outages, dealing with messy contractor data, answering client questions, and trying to make defensible recommendations.
+TRACE was built from real field experience. Not from someone guessing how boiler 
+inspection data should work. From years of sitting onsite during outages, dealing 
+with messy contractor data, answering client questions, and trying to make 
+defensible recommendations. The whole team contributed that knowledge. I just 
+helped organize it into something a developer could build.
 
-Before TRACE, we were dependent on tools that weren't really ours. Now we have something we can shape around our own standards, our own reports, and where we want to go. That matters more than the software itself.
+Before TRACE, we were dependent on tools that weren't really ours. Now we have 
+something we can shape around our own standards, our own reports, and where we 
+want to go. That matters more than the software itself, and it wouldn't exist 
+without BSI leadership backing the idea and giving it room to grow.
 
-Building it also did something I didn't expect. It forced me to understand our own process at a level I never had to before. You find out fast what you actually know versus what you've just been doing out of habit. Some of that was frustrating. It also made the final product better.
+Building it also did something I didn't expect. It forced me to understand our 
+own process at a level I never had to before. You find out fast what you actually 
+know versus what you've just been doing out of habit. Some of that was 
+frustrating. It also made the final product better.
 
-It started as "we need our own software." It turned into something that actually changes how we work. That's the part I'm most proud of.
+It started as "we need our own software." It turned into something that actually 
+changes how we work. That's the part I'm most proud of.
 
-I also want to be straightforward about something. I didn't do this alone. The colleagues I work alongside brought knowledge I don't have, caught things I missed, and made the end product better than it would have been otherwise. The development work was handled by [Sketch Development Services](https://www.sketchdev.io/), and I'm genuinely proud of what we built together. And none of it happens without the support of the family that owns Boiler Services and Inspection. They believed in the idea early, gave it room to develop, and trusted the process even when it was messy. That kind of backing is not something you take for granted.
+I also want to be straightforward about something. I didn't do this alone. The 
+colleagues I work alongside brought knowledge I don't have, caught things I 
+missed, and made the end product better than it would have been otherwise. The 
+development work was handled by [Sketch Development Services](https://www.sketchdev.io/), 
+and I'm genuinely proud of what we built together. And none of it happens without 
+the support of the family that owns Boiler Services and Inspection. They believed 
+in the idea early, gave it room to develop, and trusted the process even when it 
+was messy. That kind of backing is not something you take for granted.
